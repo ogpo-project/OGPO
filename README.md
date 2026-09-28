@@ -25,9 +25,9 @@ Sun Yat-sen University
 ## Overview
 
 <div align="center">
-<img src="sample_figs/abstract_image_page.png" alt="DMPO Overview" width="800"/>
+<img src="sample_figs/OGPO-overview.png" alt="OGPO Overview" width="800"/>
 
-*From efficiency-performance trade-off to practical real-time control. Existing methods lie on the trade-off curve: multi-step approaches achieve strong performance but slow inference, while one-step methods are fast but unstable. DMPO breaks this trade-off by occupying the upper-right region.*
+*From efficiency-performance trade-off to practical real-time control. Existing methods lie on the trade-off curve: multi-step approaches achieve strong performance but slow inference, while one-step methods are fast but unstable. OGPO breaks this trade-off by occupying the upper-right region.*
 </div>
 
 ---
@@ -35,9 +35,9 @@ Sun Yat-sen University
 ## Architecture at a Glance
 
 <div align="center">
-<img src="sample_figs/DMPO-Framework.png" alt="DMPO Architecture" width="800"/>
+<img src="sample_figs/OGPO-framework.png" alt="OGPO Architecture" width="800"/>
 
-*DMPO workflow: Stage 1 (Top & Middle) – Pre-training with dispersive MeanFlow. Stage 2 (Bottom) – PPO fine-tuning formulated as a two-layer policy factorization.*
+*OGPO workflow: Stage 1 trains a Compact Velocity Field with representation spreading. Stage 2 applies on-policy RL fine-tuning through a two-layer policy factorization.*
 </div>
 
 ---
@@ -129,7 +129,7 @@ To use custom data, place trajectories under your data directory and update the 
 
 ---
 
-## Running DMPO
+## Running OGPO
 
 ### Stage 1: Dispersive Pre-Training (Image-Based)
 
@@ -211,7 +211,7 @@ Real robot deployment scripts (Franka-Emika-Panda) are provided under `script/re
 | CP | 1 | Yes | - | - | 65% | 38% |
 | OneDP-S | 1 | Yes | - | - | 77% | 72% |
 | MP1 | 1 | No | 95% | 80% | 35% | 38% |
-| **DMPO (Ours)** | **1** | **No** | **100%** | **100%** | **83%** | **88%** |
+| **OGPO (Ours)** | **1** | **No** | **100%** | **100%** | **83%** | **88%** |
 
 ### Model Efficiency Comparison
 
@@ -220,14 +220,14 @@ Real robot deployment scripts (Franka-Emika-Panda) are provided under `script/re
 | DP (DDPM) | ResNet-18x2 | 281M | 100 | 391.1ms | 2.6Hz | 1x |
 | CP | ResNet-18x2 | 285M | 1 | 5.4ms | 187Hz | 73x |
 | MP1 | PointNet | 256M | 1 | 4.1ms | 244Hz | 96x |
-| **DMPO (Ours)** | **light ViT** | **1.78M** | **1** | **0.6ms** | **1770Hz** | **694x** |
+| **OGPO (Ours)** | **light ViT** | **1.78M** | **1** | **0.6ms** | **1770Hz** | **694x** |
 
 ### Holistic Radar Comparison
 
 <div align="center">
-<img src="sample_figs/radar_comparison_dual.png" alt="Radar Comparison" width="800"/>
+<img src="sample_figs/OGPO-radar.png" alt="Radar Comparison" width="800"/>
 
-*Holistic radar comparison across eight dimensions. (a) RL fine-tuning methods: DMPO forms the outer envelope, achieving top scores across all dimensions. (b) Generation methods: DMPO outperforms all baselines by combining one-step inference with lightweight architecture, high data efficiency, and the ability to go beyond demonstrations.*
+*Holistic radar comparison across eight dimensions. (a) RL fine-tuning methods: OGPO forms the outer envelope, achieving top scores across all dimensions. (b) Generation methods: OGPO outperforms all baselines by combining one-step inference with lightweight architecture, high data efficiency, and the ability to go beyond demonstrations.*
 </div>
 
 ---
@@ -261,7 +261,7 @@ OGPO/
 
 ## Our Contributions
 
-1. **Framework:** We introduce DMPO, a unified framework enabling stable one-step generation via principled co-design of architecture and algorithms, with 5-20× speedup over multi-step baselines.
+1. **Framework:** We introduce OGPO, a unified framework enabling stable one-step generation via principled co-design of architecture and algorithms, with 5-20× speedup over multi-step baselines.
 
 2. **Theory:** We establish the first information-theoretic foundation proving dispersive regularization is necessary for stable one-step generation, and derive the first mathematical formulation for RL fine-tuning of one-step policies.
 
@@ -289,7 +289,7 @@ If you find this work useful, please cite:
 
 ## Acknowledgments
 
-DMPO builds upon several excellent open-source projects:
+OGPO builds upon several excellent open-source projects:
 - [Diffusion Policy](https://github.com/real-stanford/diffusion_policy)
 - [ReinFlow](https://github.com/ReinFlow/ReinFlow)
 - [DPPO](https://github.com/irom-princeton/dppo)
