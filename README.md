@@ -1,15 +1,17 @@
-# DMPO: Dispersive MeanFlow Policy Optimization
+# OGPO: One-Step Generative Policy Optimization for Real-Time Robot Control
+
+Formerly released as DMPO. This is the original repository, renamed and transferred for the ACM MM 2026 paper.
 
 <div align="center">
 
-[![Project Page](https://img.shields.io/badge/Project_Page-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://guowei-zou.github.io/dmpo-page/)
+[![Project Page](https://img.shields.io/badge/Project_Page-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://ogpo-project.github.io/)
 [![arXiv](https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white)](http://arxiv.org/abs/2601.20701)
 [![Datasets](https://img.shields.io/badge/Datasets-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/datasets/Guowei-Zou/DMPO-datasets)
 [![Checkpoints](https://img.shields.io/badge/Checkpoints-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/Guowei-Zou/DMPO-checkpoints)
 [![Youtube](https://img.shields.io/badge/Youtube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=_vB_mchoux8)
 [![Bilibili](https://img.shields.io/badge/Bilibili-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV133zXBPEdb/?share_source=copy_web&vd_source=af323cc810d69452bd73799b93e838d6)
 
-> **One Step Is Enough: Dispersive MeanFlow Policy Optimization**
+> **OGPO: One-Step Generative Policy Optimization for Real-Time Robot Control**
 > A unified framework enabling true one-step generation for real-time robotic control via MeanFlow, dispersive regularization, and RL fine-tuning.
 
 [Guowei Zou](https://guowei-zou.github.io/Guowei-Zou/), Haitao Wang, [Hejun Wu](https://cse.sysu.edu.cn/teacher/WuHejun), Yukun Qian, [Yuhang Wang](https://hanlanqian.github.io/about/?lang=en), [Weibing Li](https://cse.sysu.edu.cn/teacher/LiWeibing)
@@ -55,7 +57,7 @@ Sun Yat-sen University
 ### 1. Clone & Environment Setup
 
 ```bash
-git clone https://github.com/Guowei-Zou/dmpo-release.git
+git clone https://github.com/ogpo-project/OGPO.git
 cd dmpo-release
 conda create -n dmpo python=3.10 -y
 conda activate dmpo
@@ -306,7 +308,7 @@ Released under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Contact
 
-- Submit issues: [GitHub Issues](https://github.com/Guowei-Zou/dmpo-release/issues)
+- Submit issues: [GitHub Issues](https://github.com/ogpo-project/OGPO/issues)
 - Email: zougw3@mail2.sysu.edu.cn (Guowei Zou)
 
 ---
