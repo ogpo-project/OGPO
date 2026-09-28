@@ -58,7 +58,7 @@ Sun Yat-sen University
 
 ```bash
 git clone https://github.com/ogpo-project/OGPO.git
-cd dmpo-release
+cd OGPO
 conda create -n dmpo python=3.10 -y
 conda activate dmpo
 pip install -e .
@@ -235,7 +235,7 @@ Real robot deployment scripts (Franka-Emika-Panda) are provided under `script/re
 ## Repository Map
 
 ```
-dmpo-release/
+OGPO/
 ├── agent/                    # training & evaluation agents
 │   ├── pretrain/            # pre-training scripts
 │   └── finetune/            # PPO fine-tuning scripts
@@ -317,6 +317,6 @@ Released under the MIT License. See [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-[![Star History Chart](https://api.star-history.com/svg?repos=guowei-zou/dmpo-release&type=Date)](https://star-history.com/#guowei-zou/dmpo-release&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=ogpo-project/OGPO&type=Date)](https://star-history.com/#ogpo-project/OGPO&Date)
 
 </div>
