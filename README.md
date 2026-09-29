@@ -309,7 +309,7 @@ Released under the MIT License. See [LICENSE](LICENSE) for details.
 ## Contact
 
 - Submit issues: [GitHub Issues](https://github.com/ogpo-project/OGPO/issues)
-- Email: zougw3@mail2.sysu.edu.cn (Guowei Zou)
+- Email: zougw3@mail2.sysu.edu.cn (<a href="https://guowei-zou.github.io/Guowei-Zou/">Guowei Zou</a>)
 
 ---
 
