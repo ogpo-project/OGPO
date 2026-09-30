@@ -43,7 +43,7 @@ log = logging.getLogger(__name__)
 
 # Default Hugging Face repositories for DMPO
 DMPO_CHECKPOINT_REPO = "Guowei-Zou/OGPO-checkpoints"
-DMPO_DATASET_REPO = "Guowei-Zou/DMPO-datasets"
+DMPO_DATASET_REPO = "Guowei-Zou/OGPO-datasets"
 
 # Legacy alias for backward compatibility
 DMPO_HF_REPO = DMPO_CHECKPOINT_REPO
