@@ -103,7 +103,7 @@ def main(cfg: OmegaConf):
         log.info("No EGL device specified in cfg, falling back to osmesa.")
 
     # For pre-training: download dataset if needed
-    # DMPO Authors: support hf:// prefix for Hugging Face downloads
+    # OGPO Authors: support hf:// prefix for Hugging Face downloads
     if "train_dataset_path" in cfg and cfg.train_dataset_path:
         if is_hf_path(cfg.train_dataset_path):
             # Download from Hugging Face Hub
@@ -120,7 +120,7 @@ def main(cfg: OmegaConf):
             gdown.download_folder(url=download_url, output=download_target)
 
     # For fine-tuning/pre-training: download normalization if needed
-    # DMPO Authors: support hf:// prefix for Hugging Face downloads
+    # OGPO Authors: support hf:// prefix for Hugging Face downloads
     if "normalization_path" in cfg and cfg.normalization_path:
         if is_hf_path(cfg.normalization_path):
             # Download from Hugging Face Hub
@@ -144,7 +144,7 @@ def main(cfg: OmegaConf):
 
     # For fine-tuning: download checkpoint if needed
     # ReinFlow Authors: specify base_policy_path=null when you wanna resume from an existing fine-tuning checkpoint.
-    # DMPO Authors: support hf:// prefix for Hugging Face downloads
+    # OGPO Authors: support hf:// prefix for Hugging Face downloads
     if "base_policy_path" in cfg and cfg.base_policy_path:
         if is_hf_path(cfg.base_policy_path):
             # Download from Hugging Face Hub

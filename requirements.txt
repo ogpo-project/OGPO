@@ -1,4 +1,4 @@
-# DMPO: Dispersive MeanFlow Policy Optimization
+# OGPO: One-Step Generative Policy Optimization
 # Core Dependencies
 
 # Deep Learning

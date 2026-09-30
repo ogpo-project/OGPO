@@ -1,6 +1,6 @@
 # MIT License
 #
-# Copyright (c) 2025 DMPO Authors
+# Copyright (c) 2025 OGPO Authors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -21,13 +21,13 @@
 # SOFTWARE.
 
 """
-Hugging Face download utilities for DMPO checkpoints and datasets.
+Hugging Face download utilities for OGPO checkpoints and datasets.
 
 Usage:
     In config files, specify paths with the `hf://` prefix:
 
     # For checkpoints (fine-tuning)
-    base_policy_path: hf://pretrained_checkpoints/DMPO_pretrained_gym_checkpoints/gym_improved_meanflow/hopper-medium-v2_best.pt
+    base_policy_path: hf://pretrained_checkpoints/OGPO_pretrained_gym_checkpoints/gym_improved_meanflow/hopper-medium-v2_best.pt
 
     # For datasets (pre-training)
     train_dataset_path: hf://gym/hopper-medium-v2/train.npz
@@ -41,12 +41,12 @@ from huggingface_hub import hf_hub_download
 
 log = logging.getLogger(__name__)
 
-# Default Hugging Face repositories for DMPO
-DMPO_CHECKPOINT_REPO = "ogpo-project/OGPO-checkpoints"
-DMPO_DATASET_REPO = "ogpo-project/OGPO-datasets"
+# Default Hugging Face repositories for OGPO
+OGPO_CHECKPOINT_REPO = "ogpo-project/OGPO-checkpoints"
+OGPO_DATASET_REPO = "ogpo-project/OGPO-datasets"
 
 # Legacy alias for backward compatibility
-DMPO_HF_REPO = DMPO_CHECKPOINT_REPO
+OGPO_HF_REPO = OGPO_CHECKPOINT_REPO
 
 # Prefix used to identify Hugging Face paths in config files
 HF_PREFIX = "hf://"
@@ -74,7 +74,7 @@ def parse_hf_path(path: str) -> str:
 
 def download_from_hf(
     path: str,
-    repo_id: str = DMPO_HF_REPO,
+    repo_id: str = OGPO_HF_REPO,
     cache_dir: str = None,
 ) -> str:
     """
@@ -82,7 +82,7 @@ def download_from_hf(
 
     Args:
         path: Path starting with hf://, e.g., "hf://pretrained_checkpoints/xxx.pt"
-        repo_id: Hugging Face repository ID (default: DMPO_HF_REPO)
+        repo_id: Hugging Face repository ID (default: OGPO_HF_REPO)
         cache_dir: Optional custom cache directory
 
     Returns:
@@ -108,7 +108,7 @@ def download_from_hf(
     return local_path
 
 
-def resolve_checkpoint_path(path: str, repo_id: str = DMPO_CHECKPOINT_REPO) -> str:
+def resolve_checkpoint_path(path: str, repo_id: str = OGPO_CHECKPOINT_REPO) -> str:
     """
     Resolve a checkpoint path - download from HF if needed.
 
@@ -131,7 +131,7 @@ def resolve_checkpoint_path(path: str, repo_id: str = DMPO_CHECKPOINT_REPO) -> s
 
 def download_dataset_from_hf(
     path: str,
-    repo_id: str = DMPO_DATASET_REPO,
+    repo_id: str = OGPO_DATASET_REPO,
     cache_dir: str = None,
 ) -> str:
     """
@@ -139,7 +139,7 @@ def download_dataset_from_hf(
 
     Args:
         path: Path starting with hf://, e.g., "hf://gym/hopper-medium-v2/train.npz"
-        repo_id: Hugging Face dataset repository ID (default: DMPO_DATASET_REPO)
+        repo_id: Hugging Face dataset repository ID (default: OGPO_DATASET_REPO)
         cache_dir: Optional custom cache directory
 
     Returns:
@@ -165,7 +165,7 @@ def download_dataset_from_hf(
     return local_path
 
 
-def resolve_dataset_path(path: str, repo_id: str = DMPO_DATASET_REPO) -> str:
+def resolve_dataset_path(path: str, repo_id: str = OGPO_DATASET_REPO) -> str:
     """
     Resolve a dataset path - download from HF if needed.
 

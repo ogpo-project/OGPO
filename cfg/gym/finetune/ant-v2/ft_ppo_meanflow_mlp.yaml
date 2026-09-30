@@ -19,7 +19,7 @@ hydra:
 _target_: agent.finetune.reinflow.train_ppo_meanflow_agent.TrainPPOMeanFlowAgent
 name: ${env_name}_ppo_meanflow_mlp_ta${horizon_steps}_td${denoising_steps}_tdf${ft_denoising_steps}
 logdir: ${oc.env:REINFLOW_LOG_DIR}/gym/finetune/${env_name}_ppo_meanflow_mlp_ta${horizon_steps}_td${denoising_steps}_tdf${ft_denoising_steps}/${now:%Y-%m-%d}_${now:%H-%M-%S}_seed${seed}
-base_policy_path: hf://pretrained_checkpoints/DMPO_pretrained_gym_checkpoints/gym_improved_meanflow_dispersive/ant-medium-expert-v2_best.pt
+base_policy_path: hf://pretrained_checkpoints/OGPO_pretrained_gym_checkpoints/gym_improved_meanflow_dispersive/ant-medium-expert-v2_best.pt
 normalization_path: ${oc.env:REINFLOW_DATA_DIR}/gym/${env_name}/normalization.npz
 resume_path: null
 seed: 42

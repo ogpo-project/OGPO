@@ -1,6 +1,6 @@
 # OGPO: One-Step Generative Policy Optimization for Real-Time Robot Control
 
-Formerly released as DMPO. This is the original repository, renamed and transferred for the ACM MM 2026 paper.
+Official implementation of the ACM MM 2026 paper.
 
 <div align="center">
 
@@ -59,8 +59,8 @@ Sun Yat-sen University
 ```bash
 git clone https://github.com/ogpo-project/OGPO.git
 cd OGPO
-conda create -n dmpo python=3.10 -y
-conda activate dmpo
+conda create -n ogpo python=3.10 -y
+conda activate ogpo
 pip install -e .
 ```
 
@@ -97,17 +97,17 @@ source script/set_path.sh  # defines DATA_ROOT, LOG_ROOT, WANDB_ENTITY
 
 ```
 pretrained_checkpoints/
-├── DMPO_pretrained_gym_checkpoints/
+├── OGPO_pretrained_gym_checkpoints/
 │   ├── gym_improved_meanflow/           # MeanFlow without dispersive loss
 │   │   └── {task}_best.pt               # hopper, walker2d, ant, Humanoid, kitchen-*
 │   └── gym_improved_meanflow_dispersive/  # MeanFlow with dispersive loss (recommended)
 │       └── {task}_best.pt
-└── DMPO_pretraining_robomimic_checkpoints/
+└── OGPO_pretraining_robomimic_checkpoints/
     ├── w_0p1/                           # dispersive weight = 0.1
     ├── w_0p5/                           # dispersive weight = 0.5 (recommended)
     └── w_0p9/                           # dispersive weight = 0.9
         └── {task}/                      # lift, can, square, transport
-            ├── {task}_w*_08_meanflow_dispersive.pt  # DMPO (recommended)
+            ├── {task}_w*_08_meanflow_dispersive.pt  # OGPO (recommended)
             ├── {task}_w*_02_meanflow_baseline.pt    # MeanFlow baseline
             ├── {task}_w*_03_reflow_baseline.pt      # Reflow baseline
             └── {task}_w*_01_shortcut_flow_baseline.pt
@@ -119,10 +119,10 @@ Use the `hf://` prefix in config files to auto-download from Hugging Face:
 
 ```yaml
 # Gym tasks (fine-tuning)
-base_policy_path: hf://pretrained_checkpoints/DMPO_pretrained_gym_checkpoints/gym_improved_meanflow_dispersive/hopper-medium-v2_best.pt
+base_policy_path: hf://pretrained_checkpoints/OGPO_pretrained_gym_checkpoints/gym_improved_meanflow_dispersive/hopper-medium-v2_best.pt
 
 # Robomimic tasks (fine-tuning)
-base_policy_path: hf://pretrained_checkpoints/DMPO_pretraining_robomimic_checkpoints/w_0p5/can/can_w0p5_08_meanflow_dispersive.pt
+base_policy_path: hf://pretrained_checkpoints/OGPO_pretraining_robomimic_checkpoints/w_0p5/can/can_w0p5_08_meanflow_dispersive.pt
 ```
 
 To use custom data, place trajectories under your data directory and update the corresponding YAML in `cfg/<ENV_GROUP>/pretrain/<TASK>.yaml`.
@@ -169,7 +169,7 @@ python script/run.py \
   --config-name=eval_meanflow_mlp \
   checkpoint_path=<CHECKPOINT_PATH>
 ```
-Metrics and plots are stored in `dmpo_eval_results/`.
+Metrics and plots are stored in `ogpo_eval_results/`.
 
 ---
 
@@ -275,13 +275,13 @@ If you find this work useful, please cite:
 
 ```bibtex
 @misc{zou2026stepenoughdispersivemeanflow,
-      title={One Step Is Enough: Dispersive MeanFlow Policy Optimization}, 
+      title={OGPO: One-Step Generative Policy Optimization for Real-Time Robot Control},
       author={Guowei Zou and Haitao Wang and Hejun Wu and Yukun Qian and Yuhang Wang and Weibing Li},
       year={2026},
       eprint={2601.20701},
       archivePrefix={arXiv},
       primaryClass={cs.RO},
-      url={https://arxiv.org/abs/2601.20701}, 
+      url={https://arxiv.org/abs/2601.20701},
 }
 ```
 

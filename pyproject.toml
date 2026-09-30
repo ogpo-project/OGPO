@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dmpo"
+name = "ogpo"
 version = "1.0.0"
-description = "Dispersive MeanFlow Policy Optimization: One-step flow matching policy with online RL fine-tuning."
+description = "One-Step Generative Policy Optimization: One-step flow matching policy with online RL fine-tuning."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -77,8 +77,8 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/xxx/DMPO"
-Documentation = "https://github.com/xxx/DMPO/tree/main/docs"
+Homepage = "https://github.com/ogpo-project/OGPO"
+Documentation = "https://github.com/ogpo-project/OGPO/tree/main/docs"
 
 [tool.setuptools.packages.find]
 exclude = []
