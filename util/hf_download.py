@@ -42,8 +42,8 @@ from huggingface_hub import hf_hub_download
 log = logging.getLogger(__name__)
 
 # Default Hugging Face repositories for DMPO
-DMPO_CHECKPOINT_REPO = "Guowei-Zou/OGPO-checkpoints"
-DMPO_DATASET_REPO = "Guowei-Zou/OGPO-datasets"
+DMPO_CHECKPOINT_REPO = "ogpo-project/OGPO-checkpoints"
+DMPO_DATASET_REPO = "ogpo-project/OGPO-datasets"
 
 # Legacy alias for backward compatibility
 DMPO_HF_REPO = DMPO_CHECKPOINT_REPO
