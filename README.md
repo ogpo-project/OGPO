@@ -6,8 +6,8 @@ Formerly released as DMPO. This is the original repository, renamed and transfer
 
 [![Project Page](https://img.shields.io/badge/Project_Page-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://ogpo-project.github.io/)
 [![arXiv](https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white)](http://arxiv.org/abs/2601.20701)
-[![Datasets](https://img.shields.io/badge/Datasets-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/datasets/Guowei-Zou/OGPO-datasets)
-[![Checkpoints](https://img.shields.io/badge/Checkpoints-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/Guowei-Zou/OGPO-checkpoints)
+[![Datasets](https://img.shields.io/badge/Datasets-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/datasets/ogpo-project/OGPO-datasets)
+[![Checkpoints](https://img.shields.io/badge/Checkpoints-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/ogpo-project/OGPO-checkpoints)
 [![Youtube](https://img.shields.io/badge/Youtube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=_vB_mchoux8)
 [![Bilibili](https://img.shields.io/badge/Bilibili-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV133zXBPEdb/?share_source=copy_web&vd_source=af323cc810d69452bd73799b93e838d6)
 
@@ -90,8 +90,8 @@ source script/set_path.sh  # defines DATA_ROOT, LOG_ROOT, WANDB_ENTITY
 
 ## Datasets & Checkpoints
 
-- **Demonstration datasets:** Downloaded automatically from Google Drive when launching pre-training. Also available on [Hugging Face](https://huggingface.co/datasets/Guowei-Zou/OGPO-datasets).
-- **Pretrained checkpoints:** [Hugging Face](https://huggingface.co/Guowei-Zou/OGPO-checkpoints)
+- **Demonstration datasets:** Downloaded automatically from Google Drive when launching pre-training. Also available on [Hugging Face](https://huggingface.co/datasets/ogpo-project/OGPO-datasets).
+- **Pretrained checkpoints:** [Hugging Face](https://huggingface.co/ogpo-project/OGPO-checkpoints)
 
 ### Pretrained Checkpoint Structure
 
