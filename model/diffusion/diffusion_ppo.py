@@ -157,12 +157,10 @@ class PPODiffusion(VPGDiffusion):
         advantages = advantages.clamp(min=advantage_min, max=advantage_max)
 
         # denoising discount
-        discount = torch.tensor(
-            [
-                self.gamma_denoising ** (self.ft_denoising_steps - i - 1)
-                for i in denoising_inds
-            ]
-        ).to(self.device)
+        # Vectorized: the per-element Python loop over a CUDA tensor dominated PPO update time.
+        discount = self.gamma_denoising ** (
+            self.ft_denoising_steps - denoising_inds.to(self.device) - 1
+        ).float()
         advantages *= discount
 
         # get ratio
